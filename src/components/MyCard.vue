@@ -1,12 +1,18 @@
-<template></template>
-<div :src="image">
-</div>
+<template>
+    <h3>{{ name }}</h3>
+</template>
+
+
 <style></style>
-<script>   export default {
+
+
+<script>   
+export default {
     name: 'MyCard',
     props: {
         name: String,
-        image: String
+        image: String,
+        type: String
     }
 }
 

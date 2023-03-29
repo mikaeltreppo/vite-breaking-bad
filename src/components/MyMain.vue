@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div class="showCardContainer">
-
+      <MyListCard></MyListCard>
     </div>
 </div>
 
@@ -22,4 +22,11 @@
 </style>
 
 <script>
+import MyListCard from './MyListCard.vue'
+export default {
+    components:{
+        MyListCard
+
+    }
+}
 </script>
