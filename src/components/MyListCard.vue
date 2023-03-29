@@ -1,5 +1,7 @@
 <template>
-    <div ></div>
+                   <MyCard 
+                    :name="this.store.cardList.name" 
+                />
 </template>
 <style></style>
 <script>
@@ -9,6 +11,7 @@ import MyCard from './MyCard.vue'
 export default {
     data() {
         return {
+            MyCard,
             store
         }
     },
