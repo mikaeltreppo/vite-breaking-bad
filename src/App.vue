@@ -1,28 +1,27 @@
 <script>
 import axios from 'axios';
-import { store } from '../store.js';
+import { store } from '../store';
 import MyHeader from './components/MyHeader.vue';
 import MyMain from './components/MyMain.vue'
 export default {
-  data(){
-    return{
+  data() {
+    return {
       store
     }
   },
-    components:{
-        MyHeader,
-        MyMain,
-       
-      },
+  components: {
+    MyHeader,
+    MyMain,
+
+  },
   methods: {
     getCards() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
+      this.store.loading = true;
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
         .then(response => {
           this.store.cardList = response.data.data;
-          for(let i = 0; i< this.store.cardList.length; i++){
-          console.log(this.store.cardList[i].name)
-          }
-
+          this.store.loading = false;
+          console.log(this.store.cardList)
         });
     }
   },
@@ -41,11 +40,12 @@ export default {
 </template>
 
 <style>
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}</style>
+}
+</style>
 
 
 

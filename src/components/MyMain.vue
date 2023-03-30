@@ -10,20 +10,26 @@
 <style>
 .container{
     background-color: rgb(212, 143, 56);
-    height: 2000px;
+    
     padding: 30px;
 }
 .showCardContainer{
     background-color: white;
     width: 80%;
     margin: auto;
-    height: 1000px;
+   
 }
 </style>
 
 <script>
 import MyListCard from './MyListCard.vue'
+import { store } from '../../store';
 export default {
+    data(){
+        return{
+            store
+        }
+    },
     components:{
         MyListCard
 

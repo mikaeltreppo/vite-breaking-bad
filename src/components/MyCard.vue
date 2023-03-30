@@ -1,18 +1,30 @@
 <template>
-    <h3>{{ name }}</h3>
+    <div class="card">
+     <img :src="immagine">
+<h3>{{ name }}</h3>
+</div>
 </template>
 
 
-<style></style>
+<style>
+
+.card{
+    width: calc(100% / 5);
+}
+img{
+    max-width: 100%;
+}
+
+</style>
 
 
 <script>   
 export default {
     name: 'MyCard',
     props: {
-        name: String,
-        image: String,
-        type: String
+        immagine: String,
+        name: String
+      
     }
 }
 
